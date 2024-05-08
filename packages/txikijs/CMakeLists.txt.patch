@@ -1,6 +1,5 @@
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -128,7 +128,6 @@
++++ ./CMakeLists.txt
+@@ -126,7 +126,6 @@
      target_include_directories(tjs PRIVATE ${TMP_INSTALL_DIR}/usr/local/include)
      target_link_libraries(tjs libffi_a)
  else()
