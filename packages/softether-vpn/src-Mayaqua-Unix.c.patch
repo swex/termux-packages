@@ -1,0 +1,27 @@
++++ ./src/Mayaqua/Unix.c
+@@ -310,9 +310,9 @@
+ #endif
+ 
+ #if defined(UNIX_LINUX)
+-	t = UnixExec("/bin/dmesg");
++	t = UnixExec("@TERMUX_PREFIX@/bin/dmesg");
+ #elif defined(__FreeBSD__)
+-	t = UnixExec("/sbin/sysctl -n kern.vm_guest");
++	t = UnixExec("@TERMUX_PREFIX@/bin/sysctl -n kern.vm_guest");
+ #endif
+ 
+ #if defined(UNIX_LINUX) || defined(__FreeBSD__)
+@@ -380,11 +380,11 @@
+ 		// Mac OS X
+ 		if (b)
+ 		{
+-			UnixExecSilent("/usr/sbin/sysctl -w net.inet.ipsec.esp_port=4500");
++			UnixExecSilent("@TERMUX_PREFIX@/sbin/sysctl -w net.inet.ipsec.esp_port=4500");
+ 		}
+ 		else
+ 		{
+-			UnixExecSilent("/usr/sbin/sysctl -w net.inet.ipsec.esp_port=4501");
++			UnixExecSilent("@TERMUX_PREFIX@/sbin/sysctl -w net.inet.ipsec.esp_port=4501");
+ 		}
+ 	}
+ }
